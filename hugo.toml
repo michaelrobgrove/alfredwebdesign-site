@@ -1,10 +1,10 @@
-baseURL = 'https://example.com'
+baseURL = 'https://alfredwebdesign.com'
 languageCode = 'en-us'
-title = 'Client Website'
+title = 'Alfred Web Design'
 theme = 'client-theme'
 
 [params]
-  description = 'A professional website built with Hugo'
+  description = 'Professional web design services with modern static site solutions'
   decapCMS = true
 
 [menu]
