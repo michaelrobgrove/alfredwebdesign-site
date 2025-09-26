@@ -1,0 +1,9 @@
+{
+  "name": "alfredwebdesign-site",
+  "version": "1.0.0",
+  "scripts": {
+    "install": "echo 'No npm dependencies needed for Hugo site'",
+    "build": "hugo --minify"
+  },
+  "dependencies": {}
+}
