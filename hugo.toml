@@ -1,0 +1,34 @@
+baseURL = 'https://example.com'
+languageCode = 'en-us'
+title = 'Client Website'
+theme = 'client-theme'
+
+[params]
+  description = 'A professional website built with Hugo'
+  decapCMS = true
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 10
+  
+  [[menu.main]]
+    name = 'About'
+    url = '/about/'
+    weight = 20
+  
+  [[menu.main]]
+    name = 'Services'
+    url = '/services/'
+    weight = 30
+  
+  [[menu.main]]
+    name = 'Contact'
+    url = '/contact/'
+    weight = 40
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

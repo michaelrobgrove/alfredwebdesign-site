@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Content Manager</title>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
+  <script>
+    CMS.init({
+      config: {
+        backend: {
+          name: 'github',
+          repo: 'michaelrobgrove/CLIENT_REPO_NAME',
+          branch: 'main',
+          base_url: 'https://ckfqdjfvdnlnpuuhunfb.supabase.co',
+          auth_endpoint: 'auth/github'
+        },
+        media_folder: 'static/images',
+        public_folder: '/images',
+        collections: [
+          {
+            name: 'pages',
+            label: 'Pages',
+            files: [
+              {
+                label: 'Home Page',
+                name: 'home',
+                file: 'content/_index.md',
+                fields: [
+                  { label: 'Title', name: 'title', widget: 'string' },
+                  { label: 'Description', name: 'description', widget: 'string' },
+                  { label: 'Body', name: 'body', widget: 'markdown' }
+                ]
+              }
+            ]
+          },
+          {
+            name: 'blog',
+            label: 'Blog',
+            folder: 'content/posts',
+            create: true,
+            slug: '{{year}}-{{month}}-{{day}}-{{slug}}',
+            fields: [
+              { label: 'Title', name: 'title', widget: 'string' },
+              { label: 'Publish Date', name: 'date', widget: 'datetime' },
+              { label: 'Description', name: 'description', widget: 'string' },
+              { label: 'Body', name: 'body', widget: 'markdown' }
+            ]
+          }
+        ]
+      }
+    });
+  </script>
+</body>
+</html>

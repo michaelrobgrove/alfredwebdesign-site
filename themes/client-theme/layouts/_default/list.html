@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div class="container">
+    {{ if .IsHome }}
+    <section class="hero">
+        <h1>{{ .Site.Title }}</h1>
+        <p>{{ .Site.Params.description }}</p>
+    </section>
+    {{ end }}
+    
+    <section class="content">
+        {{ range .Pages }}
+        <article class="post-preview">
+            <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+            <p>{{ .Summary }}</p>
+            <time>{{ .Date.Format "January 2, 2006" }}</time>
+        </article>
+        {{ end }}
+    </section>
+</div>
+{{ end }}
